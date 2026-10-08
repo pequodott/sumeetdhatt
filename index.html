@@ -1,0 +1,158 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Sumeet Dhatt</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,300;0,400;0,700;1,400&display=swap">
+<style>
+/* Layout: a quiet top bar, a light centred name, then portrait | plain lines of text | one personal photo. Nothing boxed. */
+:root {
+  --bg: #ffffff;
+  --fg: #23272b;
+  --muted: #6a737b;
+  --name: #38698f;
+  --rule: #e4e8eb;
+  --slot: #f1f4f6;
+  --font: "Lato", "Helvetica Neue", Arial, sans-serif;
+}
+
+body { background: var(--bg); color: var(--fg); font-family: var(--font); font-size: 17px; line-height: 1.6; padding-inline: 24px; }
+a { color: var(--name); }
+a:focus-visible, button:focus-visible { outline: 2px solid var(--name); outline-offset: 3px; }
+
+.bar { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 8px 32px; padding-block: 22px; }
+.bar .who { font-weight: 300; font-size: 24px; }
+nav { display: flex; flex-wrap: wrap; gap: 4px 28px; }
+nav button { font: inherit; font-weight: 300; font-size: 18px; color: var(--muted); background: none; border: 0; padding: 4px 0; cursor: pointer; }
+nav button:hover { color: var(--fg); }
+nav button[aria-current="page"] { color: var(--fg); font-weight: 700; }
+
+main { max-width: 900px; margin-inline: auto; padding-block: 72px 96px; }
+h1 { font-weight: 300; font-size: clamp(34px, 5vw, 46px); color: var(--name); text-align: center; margin: 0 0 96px; text-wrap: balance; }
+
+.home { display: grid; grid-template-columns: 260px minmax(0, 1fr); gap: 56px; align-items: start; }
+.home .lines { display: flex; flex-direction: column; gap: 14px; padding-top: 8px; }
+.home .lines p { margin: 0; }
+.who { display:flex; align-items:center; gap:14px }
+.logo { width:44px; height:44px; object-fit:cover }
+.photo { aspect-ratio:3/4; width:100%; max-width:100%; object-fit:cover; display:block }
+.strip { position:fixed; top:0; right:0; bottom:0; width:190px; display:flex; flex-direction:column; gap:4px; overflow-y:auto; scrollbar-width:none; overscroll-behavior:contain }
+.strip::-webkit-scrollbar { display:none }
+.strip img { flex:none; width:100%; height:auto; display:block }
+body { padding-right:214px }
+body.plain { padding-right:24px }
+.strip[hidden] { display:none }
+.home .about { max-width:46ch; color:var(--name); font-size:15px }
+.photo.round { aspect-ratio:1/1; border-radius:50% }
+.slot { aspect-ratio: 3 / 4; max-width: 100%; background: var(--slot); display: flex; align-items: center; justify-content: center; text-align: center; padding: 16px; color: var(--muted); font-size: 14px; }
+
+.text { max-width: 65ch; margin-inline: auto; display: flex; flex-direction: column; gap: 40px; }
+h2 { font-weight: 400; font-size: 14px; letter-spacing: .12em; text-transform: uppercase; color: var(--muted); margin: 0 0 14px; padding-bottom: 8px; border-bottom: 1px solid var(--rule); }
+.item { display: flex; flex-direction: column; gap: 6px; margin-bottom: 22px; }
+.item p { margin: 0; }
+.item .t { font-weight: 700; }
+.item .m { color: var(--muted); font-size: 15px; }
+.todo { background: var(--slot); color: var(--muted); padding: 1px 6px; font-size: .92em; }
+
+@media (max-width: 800px) {
+  body { padding-inline: 16px; }
+  main { padding-block: 40px 64px; }
+  h1 { margin-bottom: 48px; }
+  .home { grid-template-columns: 1fr; gap: 32px; }
+  .photo { width: 260px; margin-inline: auto; }
+  body, body.plain { padding-right: 16px; }
+  .strip { position:static; width:auto; height:140px; flex-direction:row; margin-inline:-16px; overflow-y:hidden; overflow-x:auto; }
+  .strip img { height:100%; width:auto; max-width:none; }
+  .home .lines { align-items: center; text-align: center; }
+}
+</style>
+<style>body{margin:0} img{max-width:100%} [hidden]{display:none!important}</style>
+</head>
+<body>
+
+<header class="bar">
+  <span class="who"><img class="logo" src="face.jpg" alt="">Sumeet Dhatt</span>
+  <nav aria-label="Pages">
+    <button data-page="home">Home</button>
+    <button data-page="research">Research</button>
+    <button data-page="other">etc.</button>
+  </nav>
+</header>
+
+<main>
+  <section id="home">
+    <div class="home">
+      <img class="photo round" src="drawing.jpg" alt="Drawing of Sumeet Dhatt">
+      <div class="lines">
+        <p>PhD Candidate</p>
+        <p>Department of Economics</p>
+        <p>McGill University</p>
+        <p class="about">I study low-wage labour markets, and why fast-growing sectors like care work remain persistently bad jobs.</p>
+        <p class="about">Fields: labour economics, applied microeconomics.</p>
+        <p>e-mail: sumeet.dhatt@mail.mcgill.ca</p>
+        <p><a href="#home">cv</a> <span class="todo">link your PDF</span></p>
+      </div>
+    </div>
+  </section>
+
+  <section id="research" hidden>
+    <h1>Research</h1>
+    <div class="text">
+      <p style="margin:0">I study low-wage labour markets: why fast-growing sectors like care work remain persistently bad jobs. My fields are labour economics and applied microeconomics, with a growing interest in development.</p>
+      <div>
+        <h2>Working papers</h2>
+        <div class="item">
+          <p class="t">Breaking our Backs: Population Aging, Healthcare Expansion, and Local Labour Markets</p>
+          <p>As populations age, demand for care rises, but Medicaid's administered prices hold back wage adjustment in care work. Using a commuting-zone panel, I trace the effects on healthcare employment, the wage distribution, and job stability in adjacent low-wage sectors.</p>
+        </div>
+      </div>
+      <div>
+        <h2>Publications</h2>
+        <div class="item">
+          <p class="t"><span class="todo">Title of paper on job quality and underemployment of recent immigrants to Canada</span></p>
+          <p class="m">with Ana Ferrer. <span class="todo">Journal, year, link</span></p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="other" hidden>
+    <h1>etc.</h1>
+    <div class="text">
+      <p style="margin:0"><span class="todo">Yours to fill: film, chess, comedy, or nothing at all.</span></p>
+    </div>
+  </section>
+</main>
+
+<aside class="strip" aria-hidden="true">
+  <img src="c1.jpg" alt="">
+  <img src="c3.jpg" alt="">
+  <img src="side.jpg" alt="">
+  <img src="c4.jpg" alt="">
+  <img src="c2.jpg" alt="">
+</aside>
+
+<script>
+(function () {
+  var pages = ["home", "research", "other"];
+  var buttons = document.querySelectorAll("nav button");
+  function show(id) {
+    if (pages.indexOf(id) < 0) id = "home";
+    pages.forEach(function (p) { document.getElementById(p).hidden = p !== id; });
+    var plain = id === "research";
+    document.querySelector(".strip").hidden = plain;
+    document.body.classList.toggle("plain", plain);
+    buttons.forEach(function (b) {
+      if (b.dataset.page === id) b.setAttribute("aria-current", "page"); else b.removeAttribute("aria-current");
+    });
+  }
+  buttons.forEach(function (b) {
+    b.addEventListener("click", function () { show(b.dataset.page); try { history.replaceState(null, "", "#" + b.dataset.page); } catch (e) {} });
+  });
+  show((location.hash || "").slice(1));
+})();
+</script>
+
+</body>
+</html>
