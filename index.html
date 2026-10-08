@@ -62,7 +62,7 @@ body.plain { padding-right:24px }
 .strip[hidden] { display:none }
 body::before { content:""; position:fixed; inset:0 190px 0 0; background:url(whale.png) center / auto 100% no-repeat; opacity:.07; pointer-events:none; z-index:0 }
 body.plain::before { right:0 }
-:root[data-night] body::before { display:none }
+:root[data-night] body::before { background-image:url(whale-night.png); opacity:.11 }
 .bar, main { position:relative; z-index:1 }
 @keyframes fade { from { opacity:0 } to { opacity:1 } }
 main section { animation: fade .16s ease-out }
