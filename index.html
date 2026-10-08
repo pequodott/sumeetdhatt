@@ -26,10 +26,11 @@
   --name: #38698f;
   --rule: #e4e8eb;
   --slot: #f1f4f6;
+  --mode: #a8741a;
   --font: "Lato", "Helvetica Neue", Arial, sans-serif;
 }
 
-:root[data-night] { --bg:#0d0604; --fg:#ece6e1; --muted:#a3978f; --name:#9cc3e0; --rule:#2c2320; --slot:#1c1512; color-scheme: dark }
+:root[data-night] { --bg:#0d0604; --fg:#ece6e1; --muted:#a3978f; --name:#9cc3e0; --rule:#2c2320; --slot:#1c1512; --mode:#d2a04a; color-scheme: dark }
 
 body { background: var(--bg); color: var(--fg); font-family: var(--font); font-size: 17px; line-height: 1.6; padding-inline: 24px; }
 a { color: var(--name); }
@@ -40,7 +41,8 @@ a:focus-visible, button:focus-visible { outline: 2px solid var(--name); outline-
 nav { display: flex; flex-wrap: wrap; gap: 4px 28px; }
 nav button { font: inherit; font-weight: 400; font-size: 17px; color: var(--muted); background: none; border: 0; padding: 4px 0; cursor: pointer; }
 nav button:hover { color: var(--fg); }
-nav .mode { margin-left: 8px; }
+nav .mode, nav .mode:hover { margin-left: 8px; color: var(--mode); font-style: italic; }
+nav .mode:hover { text-decoration: underline; }
 nav button[aria-current="page"] { color: var(--fg); font-weight: 700; }
 
 main { max-width: 900px; margin-inline: auto; padding-block: 72px 96px; }
