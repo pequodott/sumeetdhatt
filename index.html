@@ -29,6 +29,8 @@
   --font: "Lato", "Helvetica Neue", Arial, sans-serif;
 }
 
+:root[data-night] { --bg:#0d0604; --fg:#ece6e1; --muted:#a3978f; --name:#9cc3e0; --rule:#2c2320; --slot:#1c1512; color-scheme: dark }
+
 body { background: var(--bg); color: var(--fg); font-family: var(--font); font-size: 17px; line-height: 1.6; padding-inline: 24px; }
 a { color: var(--name); }
 a:focus-visible, button:focus-visible { outline: 2px solid var(--name); outline-offset: 3px; }
@@ -38,6 +40,7 @@ a:focus-visible, button:focus-visible { outline: 2px solid var(--name); outline-
 nav { display: flex; flex-wrap: wrap; gap: 4px 28px; }
 nav button { font: inherit; font-weight: 400; font-size: 17px; color: var(--muted); background: none; border: 0; padding: 4px 0; cursor: pointer; }
 nav button:hover { color: var(--fg); }
+nav .mode { margin-left: 8px; }
 nav button[aria-current="page"] { color: var(--fg); font-weight: 700; }
 
 main { max-width: 900px; margin-inline: auto; padding-block: 72px 96px; }
@@ -86,12 +89,15 @@ h2 { font-weight: 400; font-size: 14px; letter-spacing: .12em; text-transform: u
 </head>
 <body>
 
+<script>try { if (localStorage.getItem("mode") === "night") document.documentElement.setAttribute("data-night", ""); } catch (e) {}</script>
+
 <header class="bar">
   <span class="who"><img class="logo" src="face.jpg" alt="">Sumeet Dhatt</span>
   <nav aria-label="Pages">
     <button data-page="home">Home</button>
     <button data-page="research">Research</button>
     <button data-page="other">etc.</button>
+    <button class="mode" id="mode" type="button" aria-label="Switch between day and night">night</button>
   </nav>
 </header>
 
@@ -137,7 +143,7 @@ h2 { font-weight: 400; font-size: 14px; letter-spacing: .12em; text-transform: u
 <script>
 (function () {
   var pages = ["home", "research", "other"];
-  var buttons = document.querySelectorAll("nav button");
+  var buttons = document.querySelectorAll("nav button[data-page]");
   function show(id) {
     if (pages.indexOf(id) < 0) id = "home";
     pages.forEach(function (p) { document.getElementById(p).hidden = p !== id; });
@@ -151,6 +157,15 @@ h2 { font-weight: 400; font-size: 14px; letter-spacing: .12em; text-transform: u
   buttons.forEach(function (b) {
     b.addEventListener("click", function () { show(b.dataset.page); try { history.replaceState(null, "", "#" + b.dataset.page); } catch (e) {} });
   });
+  var root = document.documentElement, mode = document.getElementById("mode");
+  function label() { mode.textContent = root.hasAttribute("data-night") ? "day" : "night"; }
+  mode.addEventListener("click", function () {
+    var night = !root.hasAttribute("data-night");
+    if (night) root.setAttribute("data-night", ""); else root.removeAttribute("data-night");
+    try { localStorage.setItem("mode", night ? "night" : "day"); } catch (e) {}
+    label();
+  });
+  label();
   show((location.hash || "").slice(1));
 })();
 </script>
