@@ -75,6 +75,9 @@ main section { animation: fade .16s ease-out }
 .home .lines { background: var(--veil); padding: 18px 22px; border-radius: 6px; justify-self: start; }
 .home .about { max-width:46ch; color:var(--name); font-size:15px }
 .photo.round { aspect-ratio:1/1; border-radius:50% }
+.photo.sketch { aspect-ratio:auto; height:auto; object-fit:contain }
+.photo.paper { box-shadow: 0 0 0 1px var(--rule) }
+:root[data-night] .day-only, :root:not([data-night]) .night-only { display:none }
 .slot { aspect-ratio: 3 / 4; max-width: 100%; background: var(--slot); display: flex; align-items: center; justify-content: center; text-align: center; padding: 16px; color: var(--muted); font-size: 14px; }
 
 .text { max-width: 65ch; margin-inline: auto; display: flex; flex-direction: column; gap: 40px; }
@@ -105,7 +108,7 @@ h2 { font-weight: 400; font-size: 14px; letter-spacing: .12em; text-transform: u
 <script>try { if (localStorage.getItem("mode") === "night") document.documentElement.setAttribute("data-night", ""); } catch (e) {}</script>
 
 <header class="bar">
-  <span class="who"><img class="logo" src="face.jpg" alt="">Sumeet Dhatt</span>
+  <span class="who"><img class="logo day-only" src="face.jpg" alt=""><img class="logo night-only" src="sketch-mark.png" alt="">Sumeet Dhatt</span>
   <nav aria-label="Pages">
     <button data-page="home">Home</button>
     <button data-page="research">Research</button>
@@ -117,7 +120,8 @@ h2 { font-weight: 400; font-size: 14px; letter-spacing: .12em; text-transform: u
 <main>
   <section id="home">
     <div class="home">
-      <img class="photo round" src="drawing.jpg" alt="Drawing of Sumeet Dhatt">
+      <img class="photo paper day-only" src="sketch-photo.jpg" alt="Pen sketch of Sumeet Dhatt holding a coffee">
+      <img class="photo round night-only" src="drawing.jpg" alt="Drawing of Sumeet Dhatt">
       <div class="lines">
         <p>PhD Candidate</p>
         <p>Department of Economics</p>
