@@ -22,9 +22,9 @@ a { color: var(--name); }
 a:focus-visible, button:focus-visible { outline: 2px solid var(--name); outline-offset: 3px; }
 
 .bar { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 8px 32px; padding-block: 22px; }
-.bar .who { font-weight: 300; font-size: 24px; }
+.bar .who { font-weight: 400; font-size: 22px; }
 nav { display: flex; flex-wrap: wrap; gap: 4px 28px; }
-nav button { font: inherit; font-weight: 300; font-size: 18px; color: var(--muted); background: none; border: 0; padding: 4px 0; cursor: pointer; }
+nav button { font: inherit; font-weight: 400; font-size: 17px; color: var(--muted); background: none; border: 0; padding: 4px 0; cursor: pointer; }
 nav button:hover { color: var(--fg); }
 nav button[aria-current="page"] { color: var(--fg); font-weight: 700; }
 
@@ -43,6 +43,9 @@ h1 { font-weight: 300; font-size: clamp(34px, 5vw, 46px); color: var(--name); te
 body { padding-right:214px }
 body.plain { padding-right:24px }
 .strip[hidden] { display:none }
+@keyframes fade { from { opacity:0 } to { opacity:1 } }
+main section { animation: fade .16s ease-out }
+@media (prefers-reduced-motion: reduce) { main section { animation:none } }
 .home .about { max-width:46ch; color:var(--name); font-size:15px }
 .photo.round { aspect-ratio:1/1; border-radius:50% }
 .slot { aspect-ratio: 3 / 4; max-width: 100%; background: var(--slot); display: flex; align-items: center; justify-content: center; text-align: center; padding: 16px; color: var(--muted); font-size: 14px; }
@@ -99,21 +102,7 @@ h2 { font-weight: 400; font-size: 14px; letter-spacing: .12em; text-transform: u
   <section id="research" hidden>
     <h1>Research</h1>
     <div class="text">
-      <p style="margin:0">I study low-wage labour markets: why fast-growing sectors like care work remain persistently bad jobs. My fields are labour economics and applied microeconomics, with a growing interest in development.</p>
-      <div>
-        <h2>Working papers</h2>
-        <div class="item">
-          <p class="t">Breaking our Backs: Population Aging, Healthcare Expansion, and Local Labour Markets</p>
-          <p>As populations age, demand for care rises, but Medicaid's administered prices hold back wage adjustment in care work. Using a commuting-zone panel, I trace the effects on healthcare employment, the wage distribution, and job stability in adjacent low-wage sectors.</p>
-        </div>
-      </div>
-      <div>
-        <h2>Publications</h2>
-        <div class="item">
-          <p class="t"><span class="todo">Title of paper on job quality and underemployment of recent immigrants to Canada</span></p>
-          <p class="m">with Ana Ferrer. <span class="todo">Journal, year, link</span></p>
-        </div>
-      </div>
+      <!-- Add your research here -->
     </div>
   </section>
 
