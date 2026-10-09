@@ -85,6 +85,9 @@ h2 { font-weight: 400; font-size: 14px; letter-spacing: .12em; text-transform: u
 .item { display: flex; flex-direction: column; gap: 6px; margin-bottom: 22px; }
 .item p { margin: 0; }
 .item .t { font-weight: 700; }
+.item .t a { color: inherit; text-decoration-color: var(--rule); text-underline-offset: 3px }
+.item .t a:hover { color: var(--name); text-decoration-color: currentColor }
+#page-research .item { margin-bottom: 30px }
 .item .m { color: var(--muted); font-size: 15px; }
 .todo { background: var(--slot); color: var(--muted); padding: 1px 6px; font-size: .92em; }
 
@@ -154,7 +157,39 @@ h2 { font-weight: 400; font-size: 14px; letter-spacing: .12em; text-transform: u
   <section id="page-research" hidden>
     <h1>Research</h1>
     <div class="text">
-      <!-- Add your research here -->
+      <div>
+        <h2>Working papers</h2>
+        <div class="item">
+          <p class="t">Breaking our Backs: Population Aging, Healthcare Expansion, and Local Labour Markets</p>
+          <p>Healthcare is one of the largest sources of job growth in the United States, and much of that growth is care work driven by population aging. Yet care jobs remain among the lowest paid and highest turnover in the economy. I ask whether administered prices explain why: Medicaid sets what providers are paid, which may hold wages down even as demand rises. Using a commuting-zone panel and an instrument built from predicted aging, I study how aging-driven demand changes healthcare employment, how wage effects vary with Medicaid reimbursement rates, and whether turnover in care work spills over into job stability in adjacent low-wage sectors.</p>
+        </div>
+        <div class="item">
+          <p class="t">Nationalism, Polarization, and Institutions in Quebec <span class="todo">working title</span></p>
+          <p class="m">In progress. <span class="todo">Abstract to come</span></p>
+          <p>This project studies what drives nationalist sentiment and political polarization, using Quebec as its setting. It looks at the role institutions play in shaping political identity, with the sovereignty referendums and differences between anglophone and francophone communities as possible sources of comparison.</p>
+        </div>
+      </div>
+      <div>
+        <h2>Publications</h2>
+        <div class="item">
+          <p class="t"><a href="https://onlinelibrary.wiley.com/doi/10.1111/labr.12293" target="_blank" rel="noopener">Immigrant Gaps in Job Quality: Canadian Immigrant Women&#39;s Resilience to Automation</a></p>
+          <p class="m">with Ana Ferrer. <i>LABOUR</i>, 2025. Presented at the Canadian Economics Association meetings.</p>
+          <p>Gaps in job quality between immigrant and Canadian-born workers go beyond pay. We treat resilience to technological change as a measure of job quality and analyse the job tasks most likely to describe a non-automatable job. Closing initial gaps in non-routine cognitive tasks for university-educated immigrant women is worth the equivalent of a four to nine percent increase in their hourly wage. Resilience improves with time in Canada, but most of the gains come through routine cognitive tasks, which are generally thought to face higher automation risk.</p>
+        </div>
+      </div>
+      <div>
+        <h2>Policy writing</h2>
+        <div class="item">
+          <p class="t"><a href="https://uwaterloo.ca/women-work-and-the-economy/sites/default/files/uploads/documents/canadas-racialized-newcomer-women-economic-report-by-ana-ferrer-and-sumeet-singh-dhatt.pdf" target="_blank" rel="noopener">Canada&#39;s Racialized Immigrant Women</a></p>
+          <p class="m">with Ana Ferrer. Economic report, Women, Work and the Economy, University of Waterloo. Funded by Immigration, Refugees and Citizenship Canada.</p>
+          <p>How racialized newcomer women fare in the Canadian labour market, using a survey of newcomer women together with Labour Force Survey and O*NET data on pay, hours, contract type and job tasks.</p>
+        </div>
+        <div class="item">
+          <p class="t"><a href="https://uwaterloo.ca/women-work-and-the-economy/sites/default/files/uploads/documents/labour-market-barriers-faced-by-highly-educated-racialized-newcomer-women-in-canada-by-ana-ferrer-and-sumeet-singh-dhatt.pdf" target="_blank" rel="noopener">Labour Market Barriers Faced by Highly Educated Racialized Newcomer Women in Canada</a></p>
+          <p class="m">with Ana Ferrer. Policy brief, Women, Work and the Economy, University of Waterloo.</p>
+          <p>The barriers facing highly educated racialized newcomer women, from unrecognized credentials and experience to underemployment and childcare constraints, with recommendations for federal employment programs.</p>
+        </div>
+      </div>
     </div>
   </section>
 
@@ -421,6 +456,8 @@ h2 { font-weight: 400; font-size: 14px; letter-spacing: .12em; text-transform: u
       <button type="button" class="tile" data-i="257"><img src="g251.jpg" alt="Selfie with a peace sign and headphones" loading="lazy"></button>
       <button type="button" class="tile" data-i="258"><img src="g256.jpg" alt="Sitting on a throne made of hockey sticks" loading="lazy"></button>
       <button type="button" class="tile" data-i="259"><img src="g257.jpg" alt="Friends posing around a table at a bar" loading="lazy"></button>
+      <button type="button" class="tile" data-i="260"><img src="g258.jpg" alt="Selfie with a friend high up in a hockey arena" loading="lazy"></button>
+      <button type="button" class="tile" data-i="261"><img src="g259.jpg" alt="Three friends in paper doughnut-shop hats" loading="lazy"></button>
     </div>
   </section>
 </main>
